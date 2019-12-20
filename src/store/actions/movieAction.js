@@ -5,3 +5,16 @@ export function addMovies (movieName, page) {
     page,
   }
 }
+
+export function refreshPage (pageNumber) {
+  return {
+    type: 'TOGGLE_PAGE',
+    page: pageNumber
+  }
+}
+
+export function clearMovieList () {
+  return {
+    type: 'CLEAR_MOVIE_LIST'
+  }
+}

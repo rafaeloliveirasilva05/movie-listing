@@ -14,6 +14,18 @@ export default function reducer(state = INITIAL_STATE, action) {
         ]
       }
 
+    case 'TOGGLE_PAGE':
+      return {
+        ...state,
+        page: action.page
+      }
+
+    case 'CLEAR_MOVIE_LIST':
+      return {
+        movies: [],
+        page: 1
+      }
+
     default:
       return state
   }

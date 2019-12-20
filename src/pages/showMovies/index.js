@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { addMovies } from '../../store/actions/movieAction'
+import Header from '../../components/Header'
+import { refreshPage } from '../../store/actions/movieAction'
 import { Container, Card } from './styles'
 
 const ShowMovie = () => {
+  const [isFetching, setIsFetching] = useState(false)
   const movies = useSelector(state => state.moviesReducer.movies)
+  const page = useSelector(state => state.moviesReducer.page)
   const dispatch = useDispatch()
 
-  const [isFetching, setIsFetching] = useState(false)
-  const [page, setPage] = useState(1)
-
   useEffect(() => {
-    loadMovies()
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -20,7 +19,12 @@ const ShowMovie = () => {
   useEffect(() => {
     if (!isFetching) return
 
-    loadMovies()
+    function insertPage() {
+      dispatch(refreshPage(page + 1))
+      setIsFetching(false)
+    }
+
+    insertPage()
   }, [isFetching])
 
   function handleScroll() {
@@ -33,12 +37,6 @@ const ShowMovie = () => {
     setIsFetching(true)
   }
 
-  function loadMovies() {
-    dispatch(addMovies('super', page))
-    setPage(page + 1)
-    setIsFetching(false)
-  }
-
   function renderMovieItem(movie) {
     return (
       <Card>
@@ -48,9 +46,10 @@ const ShowMovie = () => {
       </Card>
     )
   }
-  console.tron.log('page', page)
+
   return (
     <Container>
+      <Header />
       <ul>
         {movies.map(movie => renderMovieItem(movie))}
       </ul>
