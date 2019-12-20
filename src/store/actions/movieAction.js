@@ -1,6 +1,7 @@
-export function addMovies (movies) {
+export function addMovies (movieName, page) {
   return {
-    type: 'TOGGLE_MOVIE',
-    movies
+    type: 'ASYNC_TOGGLE_MOVIE',
+    movieName,
+    page,
   }
 }

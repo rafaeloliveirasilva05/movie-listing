@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { addMovies } from '../../store/actions/movieAction'
-import api from '../../services/api'
 import { Container, Card } from './styles'
 
 const ShowMovie = () => {
@@ -28,23 +27,14 @@ const ShowMovie = () => {
     let innerHeight = window.innerHeight
     let scrollTop = document.documentElement.scrollTop
     let scrollHeight = document.documentElement.scrollHeight
-    
+
     if (innerHeight + scrollTop !== scrollHeight) return
 
     setIsFetching(true)
   }
 
-  async function loadMovies(movieName = 'batman') {
-    const response = await api.get('', {
-      params: {
-        s: movieName,
-        page,
-        type: 'movie'
-      }
-    })
-
-    dispatch(addMovies([...response.data.Search]))
-
+  function loadMovies() {
+    dispatch(addMovies('super', page))
     setPage(page + 1)
     setIsFetching(false)
   }
@@ -58,7 +48,7 @@ const ShowMovie = () => {
       </Card>
     )
   }
-
+  console.tron.log('page', page)
   return (
     <Container>
       <ul>
