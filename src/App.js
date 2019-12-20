@@ -1,9 +1,13 @@
 import React from 'react'
 
-export default function App(){
-  return(
+import ShowMovie from './pages/showMovies'
+import GlobalStyle from './styles/global'
+
+export default function App() {
+  return (
     <div>
-      test
+      <ShowMovie />
+      <GlobalStyle />
     </div>
   )
 }
