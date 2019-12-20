@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
+import { addMovies } from '../../store/actions/movieAction'
 import api from '../../services/api'
-import {
-  Container,
-  Card
-} from './styles'
+import { Container, Card } from './styles'
 
-export default function ShowMovie() {
-  const [movies, setMovies] = useState([])
+const ShowMovie = () => {
+  const movies = useSelector(state => state.moviesReducer.movies)
+  const dispatch = useDispatch()
+
   const [isFetching, setIsFetching] = useState(false)
   const [page, setPage] = useState(1)
 
@@ -27,7 +28,7 @@ export default function ShowMovie() {
     let innerHeight = window.innerHeight
     let scrollTop = document.documentElement.scrollTop
     let scrollHeight = document.documentElement.scrollHeight
-
+    
     if (innerHeight + scrollTop !== scrollHeight) return
 
     setIsFetching(true)
@@ -42,10 +43,7 @@ export default function ShowMovie() {
       }
     })
 
-    setMovies(prevState => ([
-      ...prevState,
-      ...response.data.Search
-    ]))
+    dispatch(addMovies([...response.data.Search]))
 
     setPage(page + 1)
     setIsFetching(false)
@@ -69,3 +67,5 @@ export default function ShowMovie() {
     </Container>
   )
 }
+
+export default ShowMovie
