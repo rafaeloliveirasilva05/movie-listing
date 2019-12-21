@@ -5,7 +5,10 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
-    grid-gap: 5px;
+    grid-gap: 20px;
+   
+    padding: 0 40px;
+    padding-top: 70px;
   }
 
   @media (max-width: 768px) {

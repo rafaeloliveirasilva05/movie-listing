@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 
 import Header from '../../components/Header'
 import { refreshPage } from '../../store/actions/movieAction'
@@ -10,6 +11,8 @@ const ShowMovie = () => {
   const movies = useSelector(state => state.moviesReducer.movies)
   const page = useSelector(state => state.moviesReducer.page)
   const dispatch = useDispatch()
+
+  let history = useHistory()
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -32,15 +35,17 @@ const ShowMovie = () => {
     let scrollTop = document.documentElement.scrollTop
     let scrollHeight = document.documentElement.scrollHeight
 
-    if (innerHeight + scrollTop !== scrollHeight) return
-
-    setIsFetching(true)
+    if (innerHeight + scrollTop > scrollHeight - 100 && scrollTop > 0) {
+      setIsFetching(true)
+    }
+    return
   }
 
   function renderMovieItem(movie) {
     return (
       <Card>
-        <div>
+        <div
+          onClick={() => history.push("/detalhes", movie)}>
           <img src={movie.Poster}></img>
         </div>
       </Card>

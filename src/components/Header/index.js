@@ -7,13 +7,24 @@ import { Container, TextInput } from './styles'
 
 const Header = () => {
   const page = useSelector(state => state.moviesReducer.page)
+  const allMovies = useSelector(state => state.moviesReducer.movies)
+
   const dispatch = useDispatch()
 
   const [movieName, setMovieName] = useState('')
+  const [clear, setClear] = useState(false)
 
   useEffect(() => {
+    if (clear) return
     loadMovies(movieName)
   }, [page])
+
+  useEffect(() => {
+    if (allMovies.length === 0 && clear) {
+      loadMovies(movieName)
+      setClear(false)
+    }
+  }, [allMovies])
 
   function loadMovies(name) {
     name = name === '' ? 'batman' : movieName
@@ -23,9 +34,8 @@ const Header = () => {
 
   function pesquisar() {
     if (movieName === '') return
-
+    setClear(true)
     dispatch(clearMovieList())
-    loadMovies(movieName)
   }
 
   function Limpar() {
@@ -33,7 +43,6 @@ const Header = () => {
 
     dispatch(clearMovieList())
     setMovieName('')
-    loadMovies('')
   }
 
   return (
