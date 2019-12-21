@@ -1,4 +1,4 @@
-import { takeEvery, put, call } from 'redux-saga/effects'
+import { takeEvery, put, call, all } from 'redux-saga/effects'
 
 import api from '../services/api'
 
@@ -25,6 +25,15 @@ function* asyncToggleMovie(action) {
   }
 }
 
+function* asyncGetMovieData(action) {
+  console.tron.log('test asyncGetMovieData', action)
+}
+
 export default function* root() {
-  yield takeEvery('ASYNC_TOGGLE_MOVIE', asyncToggleMovie)
+  yield all(
+    [
+      takeEvery('ASYNC_TOGGLE_MOVIE', asyncToggleMovie),
+      takeEvery('ASYNC_GET_MOVIE_DATA', asyncGetMovieData),
+    ]
+  )
 }

@@ -18,3 +18,10 @@ export function clearMovieList () {
     type: 'CLEAR_MOVIE_LIST'
   }
 }
+
+export function getMovieData (movieId) {
+  return {
+    type: 'ASYNC_GET_MOVIE_DATA',
+    movieId
+  }
+}
