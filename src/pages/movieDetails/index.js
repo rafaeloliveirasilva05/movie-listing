@@ -4,19 +4,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getMovieData } from '../../store/actions/movieAction'
 import {
   Container,
-  Image,
+  ImagaBackgroud,
+  ContainerMovie,
+  PosterImage,
+  GeneralMovieData,
+  SynopsisMovie,
   ContainerMovieData,
-  MovieName,
-  DetailMovie,
-  GeneralData,
-
-  ContainerEnvolvidos,
-  ContainerNota
+  ContainerDirector,
+  ContainerCast,
+  ContainerDistribuitor
 } from './styles'
 
 import detailMovie from '../../Fake/detailMovie'
-import imageDog from '../../assets/images/cachorrop.jpg'
-
 
 const MovieDetails = (teste) => {
   // console.tron.log('teste', teste.location.state)
@@ -33,42 +32,53 @@ const MovieDetails = (teste) => {
 
   return (
     <Container>
-      
+      <ImagaBackgroud
+        backgroundImageUrl={detailMovie.Poster}>
+        <div />
+      </ImagaBackgroud>
 
-      <Image>
-        <img src={imageDog} />
-      </Image>
+      <ContainerMovie>
+        <PosterImage>
+          <img src={detailMovie.Poster} />
+        </PosterImage>
 
-      <ContainerMovieData>
-        <MovieName>
+        <ContainerMovieData>
           <h1>{detailMovie.Title}</h1>
-        </MovieName>
 
-        {/* <GeneralData>
-          {detailMovie.Year}
-          {detailMovie.Runtime}
-          {detailMovie.Genre}
-        </GeneralData> */}
+          <GeneralMovieData>
+            <b>{detailMovie.Year}</b>
+            <b>*</b>
+            <b>{detailMovie.Runtime}</b>
+            <b>*</b>
+            <b>{detailMovie.Genre}</b>
+            <b>*</b>
+            <b>IMDb {detailMovie.imdbRating}</b>
+          </GeneralMovieData>
 
-        <DetailMovie>
-          {detailMovie.Plot}
-        </DetailMovie>
+          <SynopsisMovie>
+            <h2>Sinopse</h2>
+            <p>{detailMovie.Plot}</p>
+          </SynopsisMovie>
 
-        <ContainerEnvolvidos>
-          {detailMovie.Director}
-          {detailMovie.Actors}
-        </ContainerEnvolvidos>
+          <ContainerDirector>
+            <strong>Direção</strong>
+            <p>{detailMovie.Director}</p>
+          </ContainerDirector>
 
-        <ContainerNota>
-          {detailMovie.imdbRating}
-          {detailMovie.Production}
-        </ContainerNota>
+          <ContainerCast>
+            <strong>Elenco</strong>
+            <p>{detailMovie.Actors}</p>
+          </ContainerCast>
 
-      </ContainerMovieData>
+          <ContainerDistribuitor>
+            <strong>Distribuidor</strong>
+            <p>{detailMovie.Production}</p>
+          </ContainerDistribuitor>
 
+        </ContainerMovieData>
+      </ContainerMovie>
     </Container>
   )
 }
 
 export default MovieDetails
-
