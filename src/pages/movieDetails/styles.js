@@ -12,6 +12,7 @@ export const ImagaBackgroud = styled.div`
   width:100%;
   background-position: center;
   position: relative;
+  filter: blur(10px);
 
   div {
     height: 100%;
