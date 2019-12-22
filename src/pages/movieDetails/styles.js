@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100%;
-  width:100%;
 `
 
 export const ImagaBackgroud = styled.div`
@@ -25,7 +24,7 @@ export const ContainerMovie = styled.div`
   flex-direction: row;
   max-width: 960px;
   position: absolute;
-  top: 0;
+  top: 100px;
   left: 0;
   right: 0;
   margin: auto;
