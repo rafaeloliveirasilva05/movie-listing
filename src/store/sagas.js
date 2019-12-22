@@ -25,8 +25,26 @@ function* asyncToggleMovie(action) {
   }
 }
 
+function loadMovieDetails({ movieId }) {
+  const response = api.get('', {
+    params: {
+      i: movieId,
+      plot:'full'
+    }
+  })
+
+  return response
+}
+
 function* asyncGetMovieData(action) {
-  console.tron.log('test asyncGetMovieData', action)
+  try {
+    let resp = yield call(() => loadMovieDetails(action))
+
+    yield put({ type: 'TOGGLE_MOVIE_DETAILS', movieDetails: resp.data })
+
+  } catch (error) {
+    console.tron.log('error asyncToggleMovie', error)
+  }
 }
 
 export default function* root() {

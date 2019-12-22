@@ -1,6 +1,7 @@
 const INITIAL_STATE = {
   movies: [],
-  page: 1
+  page: 1,
+  movieDetails: {}
 }
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -22,8 +23,15 @@ export default function reducer(state = INITIAL_STATE, action) {
 
     case 'CLEAR_MOVIE_LIST':
       return {
+        ...state,
         movies: [],
         page: 1
+      }
+
+    case 'TOGGLE_MOVIE_DETAILS':
+      return {
+        ...state,
+        movieDetails: action.movieDetails
       }
 
     default:

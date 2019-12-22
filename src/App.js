@@ -13,10 +13,8 @@ export default function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
-          {/* <Route path="/" component={ShowMovie} exact={true} />
-          <Route path="/detalhes" component={MovieDetails} /> */}
-
-          <Route path="/" component={MovieDetails} exact={true} />
+          <Route path="/" component={ShowMovie} exact={true} />
+          <Route path="/detalhes" component={MovieDetails} />
         </Switch>
       </BrowserRouter>
       <GlobalStyle />

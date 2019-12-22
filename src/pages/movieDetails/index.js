@@ -15,64 +15,59 @@ import {
   ContainerDistribuitor
 } from './styles'
 
-import detailMovie from '../../Fake/detailMovie'
+const MovieDetails = (movie) => {
+  const dispatch = useDispatch()
+  const { imdbID } = movie.location.state
+  const movieDetails = useSelector(state => state.moviesReducer.movieDetails)
 
-const MovieDetails = (teste) => {
-  // console.tron.log('teste', teste.location.state)
+  useEffect(() => {
+    dispatch(getMovieData(imdbID))
+  }, [])
 
-  // const { Poster, imdbID } = teste.location.state
-  // const dispatch = useDispatch()
-
-  // useEffect(() => {
-  //   dispatch(getMovieData(imdbID))
-  // }, [])
-
-  // const [detailMovie] = useState(detailMovie)
-  console.tron.log(detailMovie)
 
   return (
     <Container>
       <ImagaBackgroud
-        backgroundImageUrl={detailMovie.Poster}>
+        backgroundImageUrl={movieDetails.Poster}>
         <div />
       </ImagaBackgroud>
 
       <ContainerMovie>
         <PosterImage>
-          <img src={detailMovie.Poster} />
+          <img src={movieDetails.Poster} />
         </PosterImage>
 
         <ContainerMovieData>
-          <h1>{detailMovie.Title}</h1>
+          <h1>{movieDetails.Title}</h1>
 
           <GeneralMovieData>
-            <b>{detailMovie.Year}</b>
+            <b>{movieDetails.Year}</b>
             <b>*</b>
-            <b>{detailMovie.Runtime}</b>
+            <b>{movieDetails.Runtime}</b>
             <b>*</b>
-            <b>{detailMovie.Genre}</b>
+            <b>{movieDetails.Genre}</b>
             <b>*</b>
-            <b>IMDb {detailMovie.imdbRating}</b>
+            <b>IMDb {movieDetails.imdbRating}</b>
           </GeneralMovieData>
 
           <SynopsisMovie>
             <h2>Sinopse</h2>
-            <p>{detailMovie.Plot}</p>
+            <p>{movieDetails.Plot}</p>
           </SynopsisMovie>
 
           <ContainerDirector>
             <strong>Direção</strong>
-            <p>{detailMovie.Director}</p>
+            <p>{movieDetails.Director}</p>
           </ContainerDirector>
 
           <ContainerCast>
             <strong>Elenco</strong>
-            <p>{detailMovie.Actors}</p>
+            <p>{movieDetails.Actors}</p>
           </ContainerCast>
 
           <ContainerDistribuitor>
             <strong>Distribuidor</strong>
-            <p>{detailMovie.Production}</p>
+            <p>{movieDetails.Production}</p>
           </ContainerDistribuitor>
 
         </ContainerMovieData>
