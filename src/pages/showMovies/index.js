@@ -51,7 +51,7 @@ const ShowMovie = () => {
 
   function renderMovieItem(movie) {
     return (
-      <Card>
+      <Card key={movie.imdbID}>
         <li
           onClick={() => history.push("/detalhes", movie)}>
           {
@@ -72,10 +72,7 @@ const ShowMovie = () => {
   return (
     <Container>
       <Header />
-      <ul>
-        {movies.map(movie => renderMovieItem(movie))}
-      </ul>
-      {/* {requestError === null || isLoading === true
+      {requestError === null || isLoading === true
         ?
         <ul>
           {movies.map(movie => renderMovieItem(movie))}
@@ -88,7 +85,7 @@ const ShowMovie = () => {
             <p>O filme pesquisado não foi encontrado!</p>
           </div>
         </ErrorScreen>
-      } */}
+      }
 
     </Container>
   )
