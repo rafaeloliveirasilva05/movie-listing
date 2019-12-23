@@ -83,7 +83,7 @@ function* asyncGetMovieData(action) {
     yield put({ type: 'TOGGLE_MOVIE_DETAILS', movieDetails: resp.data })
 
   } catch (error) {
-    console.tron.log('error asyncToggleMovie', error)
+    // console.tron.log('error asyncToggleMovie', error)
   }
   finally {
     yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: false })
