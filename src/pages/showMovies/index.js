@@ -35,7 +35,7 @@ const ShowMovie = () => {
     let scrollTop = document.documentElement.scrollTop
     let scrollHeight = document.documentElement.scrollHeight
 
-    if (innerHeight + scrollTop > scrollHeight - 100 && scrollTop > 0) {
+    if (innerHeight + scrollTop > scrollHeight - 1 && scrollTop > 0) {
       setIsFetching(true)
     }
     return

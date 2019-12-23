@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { getMovieData } from '../../store/actions/movieAction'
+import {
+  getMovieData,
+  navigateBetweenPages,
+  clearMovieDetails
+} from '../../store/actions/movieAction'
+
 import {
   Container,
   ImagaBackgroud,
@@ -22,8 +27,10 @@ const MovieDetails = (movie) => {
 
   useEffect(() => {
     dispatch(getMovieData(imdbID))
-  }, [])
+    dispatch(navigateBetweenPages(true))
 
+    return () => dispatch(clearMovieDetails())
+  }, [])
 
   return (
     <Container>

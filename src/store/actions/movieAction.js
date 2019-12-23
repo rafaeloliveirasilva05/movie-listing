@@ -25,3 +25,23 @@ export function getMovieData (movieId) {
     movieId
   }
 }
+
+export function navigateBetweenPages (isNavegation) {
+  return {
+    type: 'NAVIGATE_BETWEEN_PAGES',
+    isNavegation
+  }
+}
+
+export function clearMovieDetails () {
+  return {
+    type: 'CLEAR_MOVIE_DETAILS'
+  }
+}
+
+export function setChoosedMovie (nameChoosedMovie) {
+  return {
+    type: 'TOGGLE_RESEARCHED_MOVIE',
+    nameChoosedMovie
+  }
+}

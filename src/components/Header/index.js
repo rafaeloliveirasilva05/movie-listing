@@ -3,19 +3,38 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdClose } from 'react-icons/md'
 import { FaSearch } from 'react-icons/fa'
 
-import { addMovies, clearMovieList } from '../../store/actions/movieAction'
-import { Container, TextInput, ContainerTextInputMovie, ClearButton, SearchButton } from './styles'
+import {
+  addMovies,
+  clearMovieList,
+  navigateBetweenPages,
+  setChoosedMovie
+} from '../../store/actions/movieAction'
+
+import {
+  Container,
+  TextInput,
+  ContainerTextInputMovie,
+  ClearButton,
+  SearchButton
+} from './styles'
 
 const Header = () => {
   const dispatch = useDispatch()
   const page = useSelector(state => state.moviesReducer.page)
   const allMovies = useSelector(state => state.moviesReducer.movies)
+  const isNavegation = useSelector(state => state.moviesReducer.isNavegation)
 
-  const [movieName, setMovieName] = useState('')
+  const [movieName, setMovieName] = useState(useSelector(state => state.moviesReducer.nameChoosedMovie))
   const [clear, setClear] = useState(false)
 
   useEffect(() => {
+    if (isNavegation) {
+      dispatch(navigateBetweenPages(false))
+      return
+    }
+
     if (clear) return
+
     loadMovies(movieName)
   }, [page])
 
@@ -34,12 +53,15 @@ const Header = () => {
 
   function pesquisar() {
     if (movieName === '') return
+
     setClear(true)
     dispatch(clearMovieList())
+    dispatch(setChoosedMovie(movieName))
   }
 
   function Limpar() {
     if (movieName === '') return
+
     setClear(true)
     dispatch(clearMovieList())
     setMovieName('')

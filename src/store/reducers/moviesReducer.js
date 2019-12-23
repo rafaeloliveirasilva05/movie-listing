@@ -1,7 +1,9 @@
 const INITIAL_STATE = {
   movies: [],
   page: 1,
-  movieDetails: {}
+  movieDetails: {},
+  isNavegation: false,
+  nameChoosedMovie: ''
 }
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -32,6 +34,24 @@ export default function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         movieDetails: action.movieDetails
+      }
+
+    case 'NAVIGATE_BETWEEN_PAGES':
+      return {
+        ...state,
+        isNavegation: action.isNavegation
+      }
+
+    case 'CLEAR_MOVIE_DETAILS':
+      return {
+        ...state,
+        movieDetails: {}
+      }
+
+    case 'TOGGLE_RESEARCHED_MOVIE':
+      return {
+        ...state,
+        nameChoosedMovie: action.nameChoosedMovie
       }
 
     default:
