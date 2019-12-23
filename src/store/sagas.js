@@ -16,6 +16,9 @@ function loadMovies({ movieName, page }) {
 
 function* asyncToggleMovie(action) {
   try {
+
+    yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: true })
+
     let resp = yield call(() => loadMovies(action))
 
     yield put({ type: 'TOGGLE_MOVIE', movies: resp.data.Search })
@@ -23,13 +26,16 @@ function* asyncToggleMovie(action) {
   } catch (error) {
     console.tron.log('error asyncToggleMovie', error)
   }
+  finally {
+    yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: false })
+  }
 }
 
 function loadMovieDetails({ movieId }) {
   const response = api.get('', {
     params: {
       i: movieId,
-      plot:'full'
+      plot: 'full'
     }
   })
 
@@ -38,12 +44,17 @@ function loadMovieDetails({ movieId }) {
 
 function* asyncGetMovieData(action) {
   try {
+    yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: true })
+
     let resp = yield call(() => loadMovieDetails(action))
 
     yield put({ type: 'TOGGLE_MOVIE_DETAILS', movieDetails: resp.data })
 
   } catch (error) {
     console.tron.log('error asyncToggleMovie', error)
+  }
+  finally {
+    yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: false })
   }
 }
 

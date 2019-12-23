@@ -3,7 +3,8 @@ const INITIAL_STATE = {
   page: 1,
   movieDetails: {},
   isNavegation: false,
-  nameChoosedMovie: ''
+  nameChoosedMovie: '',
+  isLoading: false
 }
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -52,6 +53,12 @@ export default function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         nameChoosedMovie: action.nameChoosedMovie
+      }
+
+    case 'TOGGLE_STATUS_LOADING':
+      return {
+        ...state,
+        isLoading: action.isLoading
       }
 
     default:

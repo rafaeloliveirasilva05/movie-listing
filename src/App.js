@@ -1,23 +1,24 @@
 import React from 'react'
-import { Provider } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import store from './store'
+import LoadingMovie from './components/LoadingMovie'
 import ShowMovie from './pages/showMovies'
 import MovieDetails from './pages/movieDetails'
 
 import GlobalStyle from './styles/global'
 
 export default function App() {
+  const isLoading = useSelector(state => state.moviesReducer.isLoading)
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={ShowMovie} exact={true} />
-          <Route path="/detalhes" component={MovieDetails} />
-        </Switch>
-      </BrowserRouter>
+    <BrowserRouter>
+      {isLoading ? <LoadingMovie /> : null}
+      <Switch>
+        <Route path="/" component={ShowMovie} exact={true} />
+        <Route path="/detalhes" component={MovieDetails} />
+      </Switch>
       <GlobalStyle />
-    </Provider>
+    </BrowserRouter>
   )
 }
