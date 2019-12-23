@@ -69,10 +69,10 @@ const ShowMovie = () => {
     )
   }
 
-  console.log('seletor 1', movies)
+  console.log('app screen', movies)
 
   // if (movies.length === 0 ) return null
-  console.log('seletor 2', movies)
+
 
   return (
     <Container>

@@ -35,7 +35,8 @@ function* asyncToggleMovie(action) {
       //     message: resp.data.Error
       //   }
       // }
-      console.log('resp.data.Search', resp.data.Search)
+
+      // console.log('resp.data.Search', resp.data.Search)
       if (resp.data.Search) {
         movies = [
           ...movies,
@@ -43,10 +44,10 @@ function* asyncToggleMovie(action) {
         ]
       }
 
-      console.log('movies 1', movies)
+      console.log('entre no for 1', movies)
     }
 
-    console.tron.log('movies', movies.length)
+    // console.tron.log('movies', movies.length)
     console.log('movies', movies.length)
 
 
