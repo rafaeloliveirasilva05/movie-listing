@@ -23,11 +23,11 @@ function* asyncToggleMovie(action) {
       let page = action.page + i
       let resp = yield call(() => loadMovies(action.movieName, page))
 
-      if (page === 1) {
-        console.log('totalResults', resp.data.totalResults)
-        console.tron.log('totalResults', resp.data.totalResults)
-        yield put({ type: 'TOGGLE_SEARCH_TOTAL_MOVIES', totalMovies: parseInt(resp.data.totalResults) })
-      }
+      // if (page === 1) {
+      //   console.log('totalResults', resp.data.totalResults)
+      //   console.tron.log('totalResults', resp.data.totalResults)
+      //   yield put({ type: 'TOGGLE_SEARCH_TOTAL_MOVIES', totalMovies: parseInt(resp.data.totalResults) })
+      // }
 
       // if (resp.data.Response === 'False' && movies.length === 0) {
       //   throw {
