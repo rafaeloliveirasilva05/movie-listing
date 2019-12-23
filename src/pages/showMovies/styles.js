@@ -4,8 +4,8 @@ export const Container = styled.div`
 
   div {
     padding-top: 100px;
-   font-size: 20px;
-   color: red;
+    font-size: 20px;
+    color: red;
   }
 
   /* ul {
@@ -24,7 +24,7 @@ export const Container = styled.div`
       padding: 0 5px;
       padding-top: 60px;
     } */
-  }
+  /* } */
 `
 export const ErrorScreen = styled.div`
   height: 100vh;
