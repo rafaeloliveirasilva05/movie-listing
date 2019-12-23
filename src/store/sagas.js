@@ -29,19 +29,21 @@ function* asyncToggleMovie(action) {
         yield put({ type: 'TOGGLE_SEARCH_TOTAL_MOVIES', totalMovies: parseInt(resp.data.totalResults) })
       }
 
-      if (resp.data.Response === 'False' && movies.length === 0) {
-        throw {
-          type: 'not_movie',
-          message: resp.data.Error
-        }
-      }
-
+      // if (resp.data.Response === 'False' && movies.length === 0) {
+      //   throw {
+      //     type: 'not_movie',
+      //     message: resp.data.Error
+      //   }
+      // }
+      console.log('resp.data.Search', resp.data.Search)
       if (resp.data.Search) {
         movies = [
           ...movies,
           ...resp.data.Search
         ]
       }
+
+      console.log('movies 1', movies)
     }
 
     console.tron.log('movies', movies.length)
