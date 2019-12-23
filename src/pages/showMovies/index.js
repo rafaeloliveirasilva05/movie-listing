@@ -76,31 +76,9 @@ const ShowMovie = () => {
 
   return (
     <Container>
-      {/* <Header /> */}
-      {/* <div> {movies[0].Title} </div> */}
-      {/* <ul>
-        {movies.map(movie => {
-          return (
-            <Card>
-              <li
-                onClick={() => history.push("/detalhes", movie)}>
-                {
-                  movie.Poster === 'N/A'
-                    ?
-                    <ImageNotFoundPlaceholder>
-                      <img src={backgroundBlackImage} />
-                      <div>{movie.Title}</div>
-                    </ImageNotFoundPlaceholder>
-                    :
-                    <img src={movie.Poster} />
-                }
-              </li>
-            </Card>
-          )
-        })}
-      </ul> */}
+      <Header />
 
-      {/* {requestError === null || isLoading === true
+      {requestError === null || isLoading === true
         ?
         <ul>
           {movies.map(movie => renderMovieItem(movie))}
@@ -113,7 +91,7 @@ const ShowMovie = () => {
             <p>O filme pesquisado não foi encontrado!</p>
           </div>
         </ErrorScreen>
-      } */}
+      }
 
     </Container>
   )
