@@ -52,7 +52,7 @@ const ShowMovie = () => {
   function renderMovieItem(movie) {
     return (
       <Card>
-        <div
+        <li
           onClick={() => history.push("/detalhes", movie)}>
           {
             movie.Poster === 'N/A'
@@ -64,7 +64,7 @@ const ShowMovie = () => {
               :
               <img src={movie.Poster} />
           }
-        </div>
+        </li>
       </Card>
     )
   }
