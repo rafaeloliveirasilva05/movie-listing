@@ -69,19 +69,10 @@ const ShowMovie = () => {
     )
   }
 
-  console.log('app screen', movies)
-
-  // if (movies.length === 0 ) return null
-
-
   return (
     <Container>
       <Header />
-      <ul>
-        {movies.map(movie => renderMovieItem(movie))}
-      </ul>
-
-      {/* {requestError === null || isLoading === true
+      {requestError === null || isLoading === true
         ?
         <ul>
           {movies.map(movie => renderMovieItem(movie))}
@@ -94,8 +85,7 @@ const ShowMovie = () => {
             <p>O filme pesquisado não foi encontrado!</p>
           </div>
         </ErrorScreen>
-      } */}
-
+      }
     </Container>
   )
 }
