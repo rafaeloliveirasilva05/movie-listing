@@ -43,7 +43,7 @@ export const ErrorScreen = styled.div`
 export const Card = styled.div`
   cursor:pointer;
 
-  div{
+  li {
     width: 100%;
     height: 100%;
   }

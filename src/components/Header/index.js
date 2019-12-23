@@ -51,7 +51,7 @@ const Header = () => {
     dispatch(addMovies(name, page))
   }
 
-  function pesquisar() {
+  function searchMovie() {
     if (movieName === '') return
 
     setClear(true)
@@ -59,7 +59,7 @@ const Header = () => {
     dispatch(setChoosedMovie(movieName))
   }
 
-  function Limpar() {
+  function clearFieldMovie() {
     if (movieName === '') return
 
     setClear(true)
@@ -69,7 +69,7 @@ const Header = () => {
 
   return (
     <Container>
-      <SearchButton onClick={pesquisar}>
+      <SearchButton onClick={searchMovie}>
         <FaSearch size={18} color={'#ccc'} />
       </SearchButton>
       <ContainerTextInputMovie>
@@ -77,9 +77,15 @@ const Header = () => {
           type="text"
           placeholder='Título do filme'
           value={movieName}
-          onChange={e => setMovieName(e.target.value)} />
+          onChange={e => setMovieName(e.target.value)}
+          onKeyPress={e => {
+            if (e.key === 'Enter') {
+              searchMovie()
+            }
+          }}
+        />
         <ClearButton
-          onClick={Limpar}>
+          onClick={clearFieldMovie}>
           {movieName === '' ? null : <MdClose size={22} color={'#ccc'} />}
         </ClearButton>
       </ContainerTextInputMovie >
