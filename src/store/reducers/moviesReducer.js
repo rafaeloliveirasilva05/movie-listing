@@ -4,7 +4,9 @@ const INITIAL_STATE = {
   movieDetails: {},
   isNavegation: false,
   nameChoosedMovie: '',
-  isLoading: false
+  isLoading: false,
+  totalMovies: 0,
+  requestError: null
 }
 
 export default function reducer(state = INITIAL_STATE, action) {
@@ -28,7 +30,8 @@ export default function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         movies: [],
-        page: 1
+        page: 1,
+        totalMovies: 0
       }
 
     case 'TOGGLE_MOVIE_DETAILS':
@@ -59,6 +62,18 @@ export default function reducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isLoading: action.isLoading
+      }
+
+    case 'TOGGLE_SEARCH_TOTAL_MOVIES':
+      return {
+        ...state,
+        totalMovies: action.totalMovies
+      }
+
+    case 'MOVIE_REQUEST_ERROR':
+      return {
+        ...state,
+        requestError: action.requestError
       }
 
     default:

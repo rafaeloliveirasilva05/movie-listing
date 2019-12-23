@@ -18,8 +18,12 @@ import {
   ContainerDirector,
   ContainerCast,
   ContainerDistribuitor,
-  BackgroundLoadingScreen
+  BackgroundLoadingScreen,
+  ImageNotFoundPlaceholder
 } from './styles'
+
+import backgroundBlackImage from '../../assets/images/backgroundBlack.jpg'
+
 
 const MovieDetails = (movie) => {
   const dispatch = useDispatch()
@@ -46,7 +50,16 @@ const MovieDetails = (movie) => {
 
       <ContainerMovie>
         <PosterImage>
-          <img src={movieDetails.Poster} />
+          {
+            movieDetails.Poster === 'N/A'
+              ?
+              <ImageNotFoundPlaceholder  >
+                <div>Poster <br/> Indisponível</div>
+                <img src={backgroundBlackImage} />
+              </ImageNotFoundPlaceholder >
+              :
+              <img src={movieDetails.Poster} />
+          }
         </PosterImage>
 
         <ContainerMovieData>

@@ -24,7 +24,6 @@ export const ImagaBackgroud = styled.div`
 
   div {
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
   }
 `
 
@@ -57,7 +56,7 @@ export const ContainerMovieData = styled.div`
   flex-direction: column;
   max-width: 100%;
   max-height: 100%;
-  margin-left: 20px;
+  padding: 0 20px;
 
   h1 {
     color: red;
@@ -131,7 +130,6 @@ export const ContainerCast = styled.div`
   strong {
     font-size: 20px;
   }
-
 `
 
 export const ContainerDistribuitor = styled.div`
@@ -139,5 +137,26 @@ export const ContainerDistribuitor = styled.div`
 
   strong {
     font-size: 20px;
+  }
+`
+
+export const ImageNotFoundPlaceholder = styled.div`
+  position: relative;
+  height: 350px;
+
+  div {
+    background-color: rgba(51,51,51,0.8);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    padding: 0 10px;
+    width: 100%;
+    height: 100%;
   }
 `
