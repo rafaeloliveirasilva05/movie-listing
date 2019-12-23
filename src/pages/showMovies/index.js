@@ -71,13 +71,13 @@ const ShowMovie = () => {
 
   console.log('seletor 1', movies)
 
-  if (movies.length === 0 ) return null
+  // if (movies.length === 0 ) return null
   console.log('seletor 2', movies)
 
   return (
     <Container>
       {/* <Header /> */}
-      <div> {movies[0].Title} </div>
+      {/* <div> {movies[0].Title} </div> */}
       {/* <ul>
         {movies.map(movie => {
           return (
