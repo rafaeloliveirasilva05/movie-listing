@@ -24,7 +24,6 @@ function* asyncToggleMovie(action) {
       let resp = yield call(() => loadMovies(action.movieName, page))
 
       if (page === 1) {
-        console.tron.log('totalResults', resp.data.totalResults)
         yield put({ type: 'TOGGLE_SEARCH_TOTAL_MOVIES', totalMovies: parseInt(resp.data.totalResults) })
       }
 
@@ -42,8 +41,6 @@ function* asyncToggleMovie(action) {
         ]
       }
     }
-
-    console.tron.log('movies', movies.length)
 
     yield put({ type: 'MOVIE_REQUEST_ERROR', requestError: null })
     yield put({ type: 'TOGGLE_MOVIE', movies })
@@ -77,7 +74,7 @@ function* asyncGetMovieData(action) {
     yield put({ type: 'TOGGLE_MOVIE_DETAILS', movieDetails: resp.data })
 
   } catch (error) {
-    console.tron.log('error asyncToggleMovie', error)
+    // console.tron.log('error asyncToggleMovie', error)
   }
   finally {
     yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: false })
