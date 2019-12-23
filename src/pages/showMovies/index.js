@@ -72,7 +72,10 @@ const ShowMovie = () => {
   return (
     <Container>
       <Header />
-      {requestError === null || isLoading === true
+      <ul>
+        {movies.map(movie => renderMovieItem(movie))}
+      </ul>
+      {/* {requestError === null || isLoading === true
         ?
         <ul>
           {movies.map(movie => renderMovieItem(movie))}
@@ -85,7 +88,7 @@ const ShowMovie = () => {
             <p>O filme pesquisado não foi encontrado!</p>
           </div>
         </ErrorScreen>
-      }
+      } */}
 
     </Container>
   )
