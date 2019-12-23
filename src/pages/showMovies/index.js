@@ -69,10 +69,15 @@ const ShowMovie = () => {
     )
   }
 
+
+  if (movies.length === 0 ) return null
+  // console.tron.log('seletor', movies)
+
   return (
     <Container>
-      <Header />
-      <ul>
+      {/* <Header /> */}
+      <div> {movies[0].Title} </div>
+      {/* <ul>
         {movies.map(movie => {
           return (
             <Card>
@@ -92,7 +97,7 @@ const ShowMovie = () => {
             </Card>
           )
         })}
-      </ul>
+      </ul> */}
 
       {/* {requestError === null || isLoading === true
         ?

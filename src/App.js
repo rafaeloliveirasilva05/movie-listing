@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Header from './components/Header'
 
 import LoadingMovie from './components/LoadingMovie'
 import ShowMovie from './pages/showMovies'
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <BrowserRouter>
       {isLoading ? <LoadingMovie /> : null}
+      <Header />
       <Switch>
         <Route path="/" component={ShowMovie} exact={true} />
         <Route path="/detalhes" component={MovieDetails} />

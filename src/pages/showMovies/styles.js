@@ -1,7 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  ul {
+
+  div {
+    padding-top: 100px;
+   font-size: 20px;
+   color: red;
+  }
+
+  /* ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr;
@@ -16,7 +23,7 @@ export const Container = styled.div`
       grid-gap: 4px;
       padding: 0 5px;
       padding-top: 60px;
-    }
+    } */
   }
 `
 export const ErrorScreen = styled.div`
