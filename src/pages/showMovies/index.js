@@ -23,7 +23,7 @@ const ShowMovie = () => {
     if (!isFetching) return
 
     function insertPage() {
-      dispatch(refreshPage(page + 1))
+      dispatch(refreshPage(page + 4))
       setIsFetching(false)
     }
 

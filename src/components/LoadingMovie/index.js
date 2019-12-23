@@ -18,8 +18,8 @@ const LoadingMovie = () => {
     <Container>
       <Lottie 
         options={defaultOptions}
-        height={300}
-        width={300}
+        height={200}
+        width={200}
       />
       <p>Carregando...</p>
     </Container>

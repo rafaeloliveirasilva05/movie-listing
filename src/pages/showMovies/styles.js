@@ -13,6 +13,9 @@ export const Container = styled.div`
   @media (max-width: 768px) {
     ul {
       grid-template-columns: repeat(3, 1fr);
+      grid-gap: 4px;
+      padding: 0 5px;
+      padding-top: 60px;
     }
   }
 `

@@ -4,6 +4,14 @@ export const Container = styled.div`
   height: 100%;
 `
 
+export const BackgroundLoadingScreen = styled.div`
+  background-color: #333;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 3000;
+`
+
 export const ImagaBackgroud = styled.div`
   background-image: ${props => `url(${props.backgroundImageUrl})`};
   background-repeat: no-repeat, repeat;
@@ -57,6 +65,18 @@ export const ContainerMovieData = styled.div`
     color: #fff;
     margin-bottom: 5px;
   }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding: 0 10px;
+    padding-bottom: 60px;
+
+    h1 {
+      margin-top: 30px;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+  }
 `
 
 export const GeneralMovieData = styled.div`
@@ -67,6 +87,16 @@ export const GeneralMovieData = styled.div`
     margin-right: 20px;
     font-size: 16px;
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: space-between;
+
+    b {
+      margin-right: 0;
+      font-size: 14px;
+      color: #fff;
+    }
   }
 `
 

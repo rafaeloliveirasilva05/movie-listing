@@ -2,7 +2,7 @@ import { takeEvery, put, call, all } from 'redux-saga/effects'
 
 import api from '../services/api'
 
-function loadMovies({ movieName, page }) {
+function loadMovies(movieName, page) {
   const response = api.get('', {
     params: {
       s: movieName,
@@ -16,12 +16,20 @@ function loadMovies({ movieName, page }) {
 
 function* asyncToggleMovie(action) {
   try {
-
     yield put({ type: 'TOGGLE_STATUS_LOADING', isLoading: true })
 
-    let resp = yield call(() => loadMovies(action))
+    let movies = []
+    for (var i = 0; i < 4; i++) {
+      let page = action.page + i
+      let resp = yield call(() => loadMovies(action.movieName, page))
+     
+      movies = [
+        ...movies,
+        ...resp.data.Search
+      ]
+    }
 
-    yield put({ type: 'TOGGLE_MOVIE', movies: resp.data.Search })
+    yield put({ type: 'TOGGLE_MOVIE', movies })
 
   } catch (error) {
     console.tron.log('error asyncToggleMovie', error)

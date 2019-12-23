@@ -17,13 +17,16 @@ import {
   ContainerMovieData,
   ContainerDirector,
   ContainerCast,
-  ContainerDistribuitor
+  ContainerDistribuitor,
+  BackgroundLoadingScreen
 } from './styles'
 
 const MovieDetails = (movie) => {
   const dispatch = useDispatch()
   const { imdbID } = movie.location.state
   const movieDetails = useSelector(state => state.moviesReducer.movieDetails)
+
+  const isLoading = useSelector(state => state.moviesReducer.isLoading)
 
   useEffect(() => {
     dispatch(getMovieData(imdbID))
@@ -34,6 +37,8 @@ const MovieDetails = (movie) => {
 
   return (
     <Container>
+      {isLoading && <BackgroundLoadingScreen />}
+
       <ImagaBackgroud
         backgroundImageUrl={movieDetails.Poster}>
         <div />
@@ -49,11 +54,11 @@ const MovieDetails = (movie) => {
 
           <GeneralMovieData>
             <b>{movieDetails.Year}</b>
-            <b>*</b>
+            <b>-</b>
             <b>{movieDetails.Runtime}</b>
-            <b>*</b>
+            <b>-</b>
             <b>{movieDetails.Genre}</b>
-            <b>*</b>
+            <b>-</b>
             <b>IMDb {movieDetails.imdbRating}</b>
           </GeneralMovieData>
 

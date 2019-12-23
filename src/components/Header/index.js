@@ -70,7 +70,7 @@ const Header = () => {
   return (
     <Container>
       <SearchButton onClick={pesquisar}>
-        <FaSearch size={22} color={'#ccc'} />
+        <FaSearch size={18} color={'#ccc'} />
       </SearchButton>
       <ContainerTextInputMovie>
         <TextInput
