@@ -43,7 +43,7 @@ export const ContainerMovie = styled.div`
   }
 `
 
-export const PosterImage = styled.image`
+export const PosterImage = styled.div`
   height: 350px;
 
   img{

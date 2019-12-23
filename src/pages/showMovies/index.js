@@ -51,7 +51,7 @@ const ShowMovie = () => {
 
   function renderMovieItem(movie) {
     return (
-      <Card>
+      <Card key={movie.imdbID}>
         <div
           onClick={() => history.push("/detalhes", movie)}>
           {
