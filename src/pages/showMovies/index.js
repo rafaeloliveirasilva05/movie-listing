@@ -71,7 +71,7 @@ const ShowMovie = () => {
 
   return (
     <Container>
-      <Header />
+      <Header/>
       {requestError === null || isLoading === true
         ?
         <ul>
