@@ -15,7 +15,7 @@ export const Container = styled.div`
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 4px;
       padding: 0 5px;
-      padding-top: 60px;
+      padding-top: 80px;
     }
   }
 `

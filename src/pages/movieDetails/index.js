@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { IoMdArrowRoundBack } from 'react-icons/io'
+import { useHistory } from 'react-router-dom'
 
+import backgroundBlackImage from '../../assets/images/backgroundBlack.jpg'
 import {
   getMovieData,
   navigateBetweenPages,
@@ -19,20 +22,20 @@ import {
   ContainerCast,
   ContainerDistribuitor,
   BackgroundLoadingScreen,
-  ImageNotFoundPlaceholder
+  ImageNotFoundPlaceholder,
+  Header
 } from './styles'
-
-import backgroundBlackImage from '../../assets/images/backgroundBlack.jpg'
-
 
 const MovieDetails = (movie) => {
   const dispatch = useDispatch()
+  const history = useHistory()
+
   const { imdbID } = movie.location.state
   const movieDetails = useSelector(state => state.moviesReducer.movieDetails)
-
   const isLoading = useSelector(state => state.moviesReducer.isLoading)
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     dispatch(getMovieData(imdbID))
     dispatch(navigateBetweenPages(true))
 
@@ -42,6 +45,12 @@ const MovieDetails = (movie) => {
   return (
     <Container>
       {isLoading && <BackgroundLoadingScreen />}
+
+      <Header>
+        <button onClick={() => history.goBack()}>
+          <IoMdArrowRoundBack size={32} color={'#ccc'} />
+        </button>
+      </Header>
 
       <ImagaBackgroud
         backgroundImageUrl={movieDetails.Poster}>
@@ -54,7 +63,7 @@ const MovieDetails = (movie) => {
             movieDetails.Poster === 'N/A'
               ?
               <ImageNotFoundPlaceholder  >
-                <div>Poster <br/> Indisponível</div>
+                <div>Poster <br /> Indisponível</div>
                 <img src={backgroundBlackImage} />
               </ImageNotFoundPlaceholder >
               :

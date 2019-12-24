@@ -13,7 +13,7 @@ export const Container = styled.div`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    height: 45px;
+    height: 60px;
     padding: 0 10px;
   }
 `
@@ -29,7 +29,6 @@ export const TextInput = styled.input`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    height: 25px;
     width: 200px ;
   }
 `

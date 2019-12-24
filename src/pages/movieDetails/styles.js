@@ -2,6 +2,33 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100%;
+  position: relative;
+  scroll-snap-align: start;
+`
+
+export const Header = styled.div`
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 2000;
+  align-items: center;
+  padding: 0 30px;
+
+  button {
+    background-color: transparent;
+    margin: 0;
+    border:0;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    height: 60px
+  }
 `
 
 export const BackgroundLoadingScreen = styled.div`
@@ -24,6 +51,7 @@ export const ImagaBackgroud = styled.div`
 
   div {
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.8)
   }
 `
 
