@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  height: 60px;
+  height: 80px;
   width: 100%;
   background-color: #0a0a0a;
   padding: 0 40px;
@@ -19,7 +19,7 @@ export const Container = styled.div`
 `
 
 export const TextInput = styled.input`
-  height: 30px;
+  height: 35px;
   width: 320px ;
   border-radius:4px;
   border: none;
