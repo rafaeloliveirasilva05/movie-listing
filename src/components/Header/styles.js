@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 0 40px;
   position: fixed;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
   z-index: 1000;
@@ -18,9 +18,37 @@ export const Container = styled.div`
   }
 `
 
+export const ContainderNameLog = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  
+  h1 {
+    font-size: 22px;
+    color: red;
+    margin-left: 10px;
+  }
+
+  img {
+    height: 30px;
+  }
+
+  @media (max-width: 768px) {
+    flex: 1;
+    h1 {
+      display: none;
+    }
+
+    img {
+      height: 25px;
+    }
+  }
+`
+
 export const TextInput = styled.input`
   height: 35px;
-  width: 320px ;
+  width: 50% ;
   border-radius:4px;
   border: none;
   background-color: #333;
@@ -29,16 +57,20 @@ export const TextInput = styled.input`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    max-width: 80% ;
+    width: 100% ;
   }
 `
 
 export const ContainerTextInputMovie = styled.div`
   flex-direction: row;
   display: flex;
+  flex: 2;
   position: relative;
   justify-content: flex-end;
-  width: 100%
+
+  @media (max-width: 768px) {
+    flex: 4;
+  }
 `
 
 export const ClearButton = styled.button`
@@ -48,6 +80,7 @@ export const ClearButton = styled.button`
   background: transparent;
   outline: none;
   margin-right: 12px;
+  height:100%;
   cursor: pointer;
 `
 

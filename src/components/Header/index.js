@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdClose } from 'react-icons/md'
 import { FaSearch } from 'react-icons/fa'
 
+import logoMovie from '../../assets/images/IconMovie.png'
 import {
   addMovies,
   clearMovieList,
@@ -15,7 +16,8 @@ import {
   TextInput,
   ContainerTextInputMovie,
   ClearButton,
-  SearchButton
+  SearchButton,
+  ContainderNameLog
 } from './styles'
 
 const Header = () => {
@@ -69,6 +71,10 @@ const Header = () => {
 
   return (
     <Container>
+      <ContainderNameLog>
+        <img src={logoMovie} />
+        <h1>Movies List</h1>
+      </ContainderNameLog>
 
       <ContainerTextInputMovie>
         <SearchButton onClick={searchMovie}>

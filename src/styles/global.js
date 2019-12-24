@@ -13,8 +13,10 @@ export default createGlobalStyle`
   }
 
   body {
-    font: 1em sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     background: #333;
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased !important
   }
 
