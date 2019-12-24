@@ -29,7 +29,7 @@ export const TextInput = styled.input`
   font-weight: bold;
 
   @media (max-width: 768px) {
-    width: 200px ;
+    max-width: 80% ;
   }
 `
 
@@ -37,8 +37,8 @@ export const ContainerTextInputMovie = styled.div`
   flex-direction: row;
   display: flex;
   position: relative;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  width: 100%
 `
 
 export const ClearButton = styled.button`

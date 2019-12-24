@@ -14,7 +14,7 @@ export const Container = styled.div`
     ul {
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 4px;
-      padding: 0 5px;
+      padding: 0 3px;
       padding-top: 80px;
     }
   }

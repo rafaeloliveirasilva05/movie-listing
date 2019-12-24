@@ -69,10 +69,11 @@ const Header = () => {
 
   return (
     <Container>
-      <SearchButton onClick={searchMovie}>
-        <FaSearch size={18} color={'#ccc'} />
-      </SearchButton>
+
       <ContainerTextInputMovie>
+        <SearchButton onClick={searchMovie}>
+          <FaSearch size={18} color={'#ccc'} />
+        </SearchButton>
         <TextInput
           type="text"
           placeholder='Título do filme'
