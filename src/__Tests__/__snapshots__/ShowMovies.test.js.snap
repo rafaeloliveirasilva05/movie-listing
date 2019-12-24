@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`screen elements test show movie should render the homepage 1`] = `
+<ShowMovie>
+  <styled.div>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bZQynM",
+            "isStatic": false,
+            "lastClassName": "iOMIpg",
+            "rules": Array [
+              "
+  ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 0 40px;
+    padding-top: 100px;
+  }
+
+  @media (max-width: 768px) {
+    ul {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 4px;
+      padding: 0 3px;
+      padding-top: 80px;
+    }
+  }
+",
+            ],
+          },
+          "displayName": "styled.div",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bZQynM",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
+    >
+      <div
+        className="sc-bZQynM iOMIpg"
+      >
+        <Header>
+          <styled.div>
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "igbKCi",
+                    "rules": Array [
+                      "
+  height: 80px;
+  width: 100%;
+  background-color: #0a0a0a;
+  padding: 0 40px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+
+  @media (max-width: 768px) {
+    height: 60px;
+    padding: 0 10px;
+  }
+",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+            >
+              <div
+                className="sc-bdVaJa igbKCi"
+              >
+                <styled.div>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": false,
+                          "lastClassName": "jLgLXg",
+                          "rules": Array [
+                            "
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  
+  h1 {
+    font-size: 22px;
+    color: red;
+    margin-left: 10px;
+  }
+
+  img {
+    height: 30px;
+  }
+
+  @media (max-width: 768px) {
+    flex: 1;
+    h1 {
+      display: none;
+    }
+
+    img {
+      height: 25px;
+    }
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="sc-bwzfXH jLgLXg"
+                    >
+                      <img
+                        src="IconMovie.png"
+                      />
+                      <h1>
+                        Movies List
+                      </h1>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+                <styled.div>
+                  <StyledComponent
+                    forwardedComponent={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": Array [],
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bxivhb",
+                          "isStatic": false,
+                          "lastClassName": "kPzImK",
+                          "rules": Array [
+                            "
+  flex-direction: row;
+  display: flex;
+  flex: 2;
+  position: relative;
+  justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    flex: 4;
+  }
+",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "foldedComponentIds": Array [],
+                        "render": [Function],
+                        "styledComponentId": "sc-bxivhb",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={null}
+                  >
+                    <div
+                      className="sc-bxivhb kPzImK"
+                    >
+                      <styled.button
+                        onClick={[Function]}
+                      >
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-EHOje",
+                                "isStatic": false,
+                                "lastClassName": "hqJTuv",
+                                "rules": Array [
+                                  "
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-right: 12px;
+  cursor: pointer;
+",
+                                ],
+                              },
+                              "displayName": "styled.button",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-EHOje",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="sc-EHOje hqJTuv"
+                            onClick={[Function]}
+                          >
+                            <FaSearch
+                              color="#ccc"
+                              size={18}
+                            >
+                              <IconBase
+                                attr={
+                                  Object {
+                                    "viewBox": "0 0 512 512",
+                                  }
+                                }
+                                color="#ccc"
+                                size={18}
+                              >
+                                <svg
+                                  color="#ccc"
+                                  fill="currentColor"
+                                  height={18}
+                                  size={18}
+                                  stroke="currentColor"
+                                  strokeWidth="0"
+                                  style={
+                                    Object {
+                                      "color": "#ccc",
+                                    }
+                                  }
+                                  viewBox="0 0 512 512"
+                                  width={18}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                                    key="0"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </FaSearch>
+                          </button>
+                        </StyledComponent>
+                      </styled.button>
+                      <styled.input
+                        onChange={[Function]}
+                        onKeyPress={[Function]}
+                        placeholder="Título do filme"
+                        type="text"
+                        value={Object {}}
+                      >
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-htpNat",
+                                "isStatic": false,
+                                "lastClassName": "cOfPQG",
+                                "rules": Array [
+                                  "
+  height: 35px;
+  width: 50% ;
+  border-radius:4px;
+  border: none;
+  background-color: #333;
+  padding-left: 10px;
+  color: #fff;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    width: 100% ;
+  }
+",
+                                ],
+                              },
+                              "displayName": "styled.input",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-htpNat",
+                              "target": "input",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          onChange={[Function]}
+                          onKeyPress={[Function]}
+                          placeholder="Título do filme"
+                          type="text"
+                          value={Object {}}
+                        >
+                          <input
+                            className="sc-htpNat cOfPQG"
+                            onChange={[Function]}
+                            onKeyPress={[Function]}
+                            placeholder="Título do filme"
+                            type="text"
+                            value={Object {}}
+                          />
+                        </StyledComponent>
+                      </styled.input>
+                      <styled.button
+                        onClick={[Function]}
+                      >
+                        <StyledComponent
+                          forwardedComponent={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": Array [],
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-ifAKCX",
+                                "isStatic": false,
+                                "lastClassName": "bJIIvF",
+                                "rules": Array [
+                                  "
+  position: absolute;
+  right: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  margin-right: 12px;
+  height:100%;
+  cursor: pointer;
+",
+                                ],
+                              },
+                              "displayName": "styled.button",
+                              "foldedComponentIds": Array [],
+                              "render": [Function],
+                              "styledComponentId": "sc-ifAKCX",
+                              "target": "button",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={null}
+                          onClick={[Function]}
+                        >
+                          <button
+                            className="sc-ifAKCX bJIIvF"
+                            onClick={[Function]}
+                          >
+                            <MdClose
+                              color="#ccc"
+                              size={22}
+                            >
+                              <IconBase
+                                attr={
+                                  Object {
+                                    "viewBox": "0 0 24 24",
+                                  }
+                                }
+                                color="#ccc"
+                                size={22}
+                              >
+                                <svg
+                                  color="#ccc"
+                                  fill="currentColor"
+                                  height={22}
+                                  size={22}
+                                  stroke="currentColor"
+                                  strokeWidth="0"
+                                  style={
+                                    Object {
+                                      "color": "#ccc",
+                                    }
+                                  }
+                                  viewBox="0 0 24 24"
+                                  width={22}
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                    key="0"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </MdClose>
+                          </button>
+                        </StyledComponent>
+                      </styled.button>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </div>
+            </StyledComponent>
+          </styled.div>
+        </Header>
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-gzVnrw",
+                  "isStatic": false,
+                  "lastClassName": "cNHBPg",
+                  "rules": Array [
+                    "
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #333;
+
+  div {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-gzVnrw",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-gzVnrw cNHBPg"
+            >
+              <FaRegSadCry
+                color="#ccc"
+                size={80}
+              >
+                <IconBase
+                  attr={
+                    Object {
+                      "viewBox": "0 0 496 512",
+                    }
+                  }
+                  color="#ccc"
+                  size={80}
+                >
+                  <svg
+                    color="#ccc"
+                    fill="currentColor"
+                    height={80}
+                    size={80}
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
+                      Object {
+                        "color": "#ccc",
+                      }
+                    }
+                    viewBox="0 0 496 512"
+                    width={80}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm144 386.4V280c0-13.2-10.8-24-24-24s-24 10.8-24 24v151.4C315.5 447 282.8 456 248 456s-67.5-9-96-24.6V280c0-13.2-10.8-24-24-24s-24 10.8-24 24v114.4c-34.6-36-56-84.7-56-138.4 0-110.3 89.7-200 200-200s200 89.7 200 200c0 53.7-21.4 102.5-56 138.4zM205.8 234.5c4.4-2.4 6.9-7.4 6.1-12.4-4-25.2-34.2-42.1-59.8-42.1s-55.9 16.9-59.8 42.1c-.8 5 1.7 10 6.1 12.4 4.4 2.4 9.9 1.8 13.7-1.6l9.5-8.5c14.8-13.2 46.2-13.2 61 0l9.5 8.5c2.5 2.3 7.9 4.8 13.7 1.6zM344 180c-25.7 0-55.9 16.9-59.8 42.1-.8 5 1.7 10 6.1 12.4 4.5 2.4 9.9 1.8 13.7-1.6l9.5-8.5c14.8-13.2 46.2-13.2 61 0l9.5 8.5c2.5 2.2 8 4.7 13.7 1.6 4.4-2.4 6.9-7.4 6.1-12.4-3.9-25.2-34.1-42.1-59.8-42.1zm-96 92c-30.9 0-56 28.7-56 64s25.1 64 56 64 56-28.7 56-64-25.1-64-56-64z"
+                      key="0"
+                    />
+                  </svg>
+                </IconBase>
+              </FaRegSadCry>
+              <div>
+                <p>
+                  Descuple
+                </p>
+                <p>
+                  O filme pesquisado não foi encontrado!
+                </p>
+              </div>
+            </div>
+          </StyledComponent>
+        </styled.div>
+      </div>
+    </StyledComponent>
+  </styled.div>
+</ShowMovie>
+`;
